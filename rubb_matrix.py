@@ -110,18 +110,15 @@ class Matrix:
 
 
 
-
-mtrx = Matrix(3)
-
-t1 = time.time()
-
-mtrx.append(1)
-
-t2 = time.time()
-
-mtrx.append()
-
-t3 = time.time()
-
-print(f'appending: {t2 - t1}')
-print(f'popping: {t3 - t2}')
+for i in range(5):
+    t1 = time.time()
+    mtrx = Matrix.from_iter([1,2,3,4,5,6,7,8], 3)
+    t2 = time.time()
+    mtrx.append(1)
+    t3 = time.time()
+    for i in range(7):
+        mtrx.pop()
+    t4 = time.time()
+    print(f'creation: {t2 - t1}')
+    print(f'appending: {t3 - t2}')
+    print(f'popping: {t4 - t3}')
